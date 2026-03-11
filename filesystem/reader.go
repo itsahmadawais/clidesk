@@ -5,7 +5,7 @@ import (
 	"sort"
 	"time"
 
-	"clidesk/icons"
+	"github.com/itsahmadawais/clidesk/icons"
 )
 
 type Entry struct {

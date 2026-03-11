@@ -5,8 +5,8 @@ import (
 	"strings"
 	"time"
 
-	"clidesk/filesystem"
-	"clidesk/themes"
+	"github.com/itsahmadawais/clidesk/filesystem"
+	"github.com/itsahmadawais/clidesk/themes"
 
 	"github.com/charmbracelet/lipgloss"
 )

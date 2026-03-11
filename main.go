@@ -13,9 +13,9 @@ import (
 
 	tea "github.com/charmbracelet/bubbletea"
 
-	"clidesk/filesystem"
-	"clidesk/themes"
-	"clidesk/ui"
+	"github.com/itsahmadawais/clidesk/filesystem"
+	"github.com/itsahmadawais/clidesk/themes"
+	"github.com/itsahmadawais/clidesk/ui"
 )
 
 // ── Message types ─────────────────────────────────────────────────────────────

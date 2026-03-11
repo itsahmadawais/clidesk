@@ -1,4 +1,4 @@
-module clidesk
+module github.com/itsahmadawais/clidesk
 
 go 1.25.0
 
