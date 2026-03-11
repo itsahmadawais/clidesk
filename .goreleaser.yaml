@@ -56,7 +56,7 @@ changelog:
 
 release:
   github:
-    owner: yourusername
+    owner: itsahmadawais
     name: clidesk
   draft: false
   prerelease: auto
@@ -66,10 +66,10 @@ release:
 # brews:
 #   - name: clidesk
 #     repository:
-#       owner: yourusername
+#       owner: itsahmadawais
 #       name: homebrew-tap
 #       token: "{{ .Env.TAP_GITHUB_TOKEN }}"
-#     homepage: "https://github.com/yourusername/clidesk"
+#     homepage: "https://github.com/itsahmadawais/clidesk"
 #     description: "Desktop-style file explorer for the terminal"
 #     license: "MIT"
 #     install: |
@@ -79,9 +79,9 @@ release:
 # scoops:
 #   - name: clidesk
 #     repository:
-#       owner: yourusername
+#       owner: itsahmadawais
 #       name: scoop-bucket
 #       token: "{{ .Env.SCOOP_GITHUB_TOKEN }}"
-#     homepage: "https://github.com/yourusername/clidesk"
+#     homepage: "https://github.com/itsahmadawais/clidesk"
 #     description: "Desktop-style file explorer for the terminal"
 #     license: "MIT"

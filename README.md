@@ -5,6 +5,7 @@
 [![Go Version](https://img.shields.io/badge/Go-1.21%2B-00ADD8?logo=go)](https://go.dev/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey)]()
+[![GitHub Repo](https://img.shields.io/badge/GitHub-itsahmadawais%2Fclidesk-181717?logo=github)](https://github.com/itsahmadawais/clidesk)
 
 ```
 ╭──────────────────────────────────────────────────────────────────╮
@@ -47,7 +48,7 @@ Developers spend most of their time in the terminal, but navigating the filesyst
 ### Via Go (recommended)
 
 ```bash
-go install github.com/yourusername/clidesk@latest
+go install github.com/itsahmadawais/clidesk@latest
 ```
 
 > Requires Go 1.21+. The binary is placed in `$GOPATH/bin` (usually already in your `$PATH`).
@@ -55,7 +56,7 @@ go install github.com/yourusername/clidesk@latest
 ### Build from source
 
 ```bash
-git clone https://github.com/yourusername/clidesk.git
+git clone https://github.com/itsahmadawais/clidesk.git
 cd clidesk
 go build -o clidesk .
 
@@ -223,7 +224,7 @@ See [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) for a full technical deep-div
 Pull requests are welcome. For large changes, please open an issue first.
 
 ```bash
-git clone https://github.com/yourusername/clidesk.git
+git clone https://github.com/itsahmadawais/clidesk.git
 cd clidesk
 go run .          # run in dev mode
 go test ./...     # run tests

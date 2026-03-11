@@ -27,9 +27,6 @@ Thumbs.db
 ehthumbs.db
 Desktop.ini
 
-# ── Internal docs (not for public repo) ──────────────────────────────────────
-docs/Requirements.md
-
 # ── Misc ──────────────────────────────────────────────────────────────────────
 *.log
 .env

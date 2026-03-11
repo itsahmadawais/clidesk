@@ -9,7 +9,7 @@ This document covers every method for getting CLIDesk into users' hands, from th
 The fastest path. Any developer with Go installed can run:
 
 ```bash
-go install github.com/yourusername/clidesk@latest
+go install github.com/itsahmadawais/clidesk@latest
 ```
 
 The binary lands in `$GOPATH/bin` (typically `~/go/bin` or `C:\Users\<user>\go\bin`), which is usually already in `$PATH`.
@@ -55,6 +55,7 @@ sha256sum * > checksums.txt
 
 ```bash
 gh release create v1.0.0 dist/* \
+  --repo itsahmadawais/clidesk \
   --title "CLIDesk v1.0.0" \
   --notes "Initial release"
 ```
@@ -150,7 +151,7 @@ goreleaser release --clean
 Homebrew is the most common package manager on macOS. Users can install with:
 
 ```bash
-brew install yourusername/tap/clidesk
+brew install itsahmadawais/tap/clidesk
 ```
 
 ### Create a Homebrew Tap
@@ -161,27 +162,27 @@ brew install yourusername/tap/clidesk
 ```ruby
 class Clidesk < Formula
   desc "Desktop-style file explorer for the terminal"
-  homepage "https://github.com/yourusername/clidesk"
+  homepage "https://github.com/itsahmadawais/clidesk"
   version "1.0.0"
 
   on_macos do
     on_intel do
-      url "https://github.com/yourusername/clidesk/releases/download/v#{version}/clidesk-darwin-amd64"
+      url "https://github.com/itsahmadawais/clidesk/releases/download/v#{version}/clidesk-darwin-amd64"
       sha256 "PASTE_SHA256_HERE"
     end
     on_arm do
-      url "https://github.com/yourusername/clidesk/releases/download/v#{version}/clidesk-darwin-arm64"
+      url "https://github.com/itsahmadawais/clidesk/releases/download/v#{version}/clidesk-darwin-arm64"
       sha256 "PASTE_SHA256_HERE"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/yourusername/clidesk/releases/download/v#{version}/clidesk-linux-amd64"
+      url "https://github.com/itsahmadawais/clidesk/releases/download/v#{version}/clidesk-linux-amd64"
       sha256 "PASTE_SHA256_HERE"
     end
     on_arm do
-      url "https://github.com/yourusername/clidesk/releases/download/v#{version}/clidesk-linux-arm64"
+      url "https://github.com/itsahmadawais/clidesk/releases/download/v#{version}/clidesk-linux-arm64"
       sha256 "PASTE_SHA256_HERE"
     end
   end
@@ -198,7 +199,7 @@ end
 
 3. Users install via:
 ```bash
-brew tap yourusername/tap
+brew tap itsahmadawais/tap
 brew install clidesk
 ```
 
@@ -211,7 +212,7 @@ brew install clidesk
 [Scoop](https://scoop.sh/) is a popular Windows package manager for developers.
 
 ```powershell
-scoop bucket add yourusername https://github.com/yourusername/scoop-bucket
+scoop bucket add itsahmadawais https://github.com/itsahmadawais/scoop-bucket
 scoop install clidesk
 ```
 
@@ -224,22 +225,22 @@ scoop install clidesk
 {
   "version": "1.0.0",
   "description": "Desktop-style file explorer for the terminal",
-  "homepage": "https://github.com/yourusername/clidesk",
+  "homepage": "https://github.com/itsahmadawais/clidesk",
   "license": "MIT",
   "architecture": {
     "64bit": {
-      "url": "https://github.com/yourusername/clidesk/releases/download/v1.0.0/clidesk-windows-amd64.exe",
+      "url": "https://github.com/itsahmadawais/clidesk/releases/download/v1.0.0/clidesk-windows-amd64.exe",
       "hash": "PASTE_SHA256_HERE",
       "bin": "clidesk-windows-amd64.exe"
     }
   },
   "checkver": {
-    "github": "https://github.com/yourusername/clidesk"
+    "github": "https://github.com/itsahmadawais/clidesk"
   },
   "autoupdate": {
     "architecture": {
       "64bit": {
-        "url": "https://github.com/yourusername/clidesk/releases/download/v$version/clidesk-windows-amd64.exe"
+        "url": "https://github.com/itsahmadawais/clidesk/releases/download/v$version/clidesk-windows-amd64.exe"
       }
     }
   }
@@ -255,37 +256,37 @@ scoop install clidesk
 [winget](https://learn.microsoft.com/en-us/windows/package-manager/) is Windows' built-in package manager (Windows 10 1709+).
 
 ```powershell
-winget install yourusername.clidesk
+winget install itsahmadawais.clidesk
 ```
 
 ### Submit to winget-pkgs
 
 1. Fork [microsoft/winget-pkgs](https://github.com/microsoft/winget-pkgs)
-2. Add a manifest under `manifests/y/yourusername/clidesk/1.0.0/`:
+2. Add a manifest under `manifests/y/itsahmadawais/clidesk/1.0.0/`:
 
-`yourusername.clidesk.installer.yaml`:
+`itsahmadawais.clidesk.installer.yaml`:
 ```yaml
-PackageIdentifier: yourusername.clidesk
+PackageIdentifier: itsahmadawais.clidesk
 PackageVersion: 1.0.0
 InstallerType: portable
 Installers:
   - Architecture: x64
-    InstallerUrl: https://github.com/yourusername/clidesk/releases/download/v1.0.0/clidesk-windows-amd64.exe
+    InstallerUrl: https://github.com/itsahmadawais/clidesk/releases/download/v1.0.0/clidesk-windows-amd64.exe
     InstallerSha256: PASTE_SHA256_HERE
 ManifestType: installer
 ManifestVersion: 1.6.0
 ```
 
-`yourusername.clidesk.locale.en-US.yaml`:
+`itsahmadawais.clidesk.locale.en-US.yaml`:
 ```yaml
-PackageIdentifier: yourusername.clidesk
+PackageIdentifier: itsahmadawais.clidesk
 PackageVersion: 1.0.0
 PackageLocale: en-US
-Publisher: yourusername
+Publisher: itsahmadawais
 PackageName: CLIDesk
 ShortDescription: Desktop-style file explorer for the terminal
 License: MIT
-PackageUrl: https://github.com/yourusername/clidesk
+PackageUrl: https://github.com/itsahmadawais/clidesk
 ManifestType: locale
 ManifestVersion: 1.6.0
 ```
@@ -360,7 +361,7 @@ pkgver=1.0.0
 pkgrel=1
 pkgdesc="Desktop-style file explorer for the terminal"
 arch=('x86_64' 'aarch64')
-url="https://github.com/yourusername/clidesk"
+url="https://github.com/itsahmadawais/clidesk"
 license=('MIT')
 provides=('clidesk')
 
