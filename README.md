@@ -7,19 +7,7 @@
 [![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey)]()
 [![GitHub Repo](https://img.shields.io/badge/GitHub-itsahmadawais%2Fclidesk-181717?logo=github)](https://github.com/itsahmadawais/clidesk)
 
-```
-╭──────────────────────────────────────────────────────────────────╮
-│  CLIDesk  /home/user/projects                                    │
-│                                                                  │
-│  📁 api          📁 frontend      📁 docs          📁 scripts   │
-│  📁 .github      🐹 main.go       🔧 config.json   📝 README.md │
-│  🗜️ release.zip  🔒 go.sum        📕 design.pdf    🐚 deploy.sh │
-│  ────────────────────────────────────────────────────────────    │
-│  📁 frontend  ·  directory  ·  Mar 11, 2026  16:04              │
-│                                                                  │
-│  [↑↓←→] Move  ·  [↵] Open  ·  [⌫] Back  ·  [:] Run  ·  [Q] Quit│
-╰──────────────────────────────────────────────────────────────────╯
-```
+![CLIDesk screenshot](assets/screenshot.png)
 
 ---
 
