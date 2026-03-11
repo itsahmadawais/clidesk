@@ -1,0 +1,88 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*.*.*"
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    name: Build & Release
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # full history for changelog generation
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: "1.21"
+          cache: true
+
+      - name: Download dependencies
+        run: go mod download
+
+      # ── Cross-compile for all platforms ────────────────────────────────────
+      - name: Build binaries
+        run: |
+          mkdir -p dist
+
+          # Windows
+          GOOS=windows GOARCH=amd64 go build -ldflags="-s -w" -o dist/clidesk-windows-amd64.exe .
+          GOOS=windows GOARCH=arm64 go build -ldflags="-s -w" -o dist/clidesk-windows-arm64.exe .
+
+          # macOS
+          GOOS=darwin GOARCH=amd64 go build -ldflags="-s -w" -o dist/clidesk-darwin-amd64 .
+          GOOS=darwin GOARCH=arm64 go build -ldflags="-s -w" -o dist/clidesk-darwin-arm64 .
+
+          # Linux
+          GOOS=linux GOARCH=amd64 go build -ldflags="-s -w" -o dist/clidesk-linux-amd64 .
+          GOOS=linux GOARCH=arm64 go build -ldflags="-s -w" -o dist/clidesk-linux-arm64 .
+
+      # ── Create archives ────────────────────────────────────────────────────
+      - name: Package archives
+        run: |
+          cd dist
+
+          # Windows — zip
+          zip clidesk-windows-amd64.zip clidesk-windows-amd64.exe
+          zip clidesk-windows-arm64.zip clidesk-windows-arm64.exe
+
+          # macOS — tar.gz
+          tar czf clidesk-darwin-amd64.tar.gz  clidesk-darwin-amd64
+          tar czf clidesk-darwin-arm64.tar.gz  clidesk-darwin-arm64
+
+          # Linux — tar.gz
+          tar czf clidesk-linux-amd64.tar.gz   clidesk-linux-amd64
+          tar czf clidesk-linux-arm64.tar.gz   clidesk-linux-arm64
+
+      # ── Generate checksums ─────────────────────────────────────────────────
+      - name: Generate checksums
+        run: |
+          cd dist
+          sha256sum *.zip *.tar.gz > checksums.txt
+          cat checksums.txt
+
+      # ── Extract tag version for release notes ──────────────────────────────
+      - name: Get version
+        id: version
+        run: echo "tag=${GITHUB_REF#refs/tags/}" >> $GITHUB_OUTPUT
+
+      # ── Publish GitHub Release ─────────────────────────────────────────────
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          name: "CLIDesk ${{ steps.version.outputs.tag }}"
+          tag_name: ${{ steps.version.outputs.tag }}
+          draft: false
+          prerelease: ${{ contains(steps.version.outputs.tag, '-') }}
+          generate_release_notes: true
+          files: |
+            dist/*.zip
+            dist/*.tar.gz
+            dist/checksums.txt
