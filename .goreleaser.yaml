@@ -72,12 +72,13 @@ brews:
     test: |
       system "#{bin}/clidesk", "--help"
 
-scoops:
-  - name: clidesk
-    repository:
-      owner: itsahmadawais
-      name: scoop-bucket
-      token: "{{ .Env.SCOOP_GITHUB_TOKEN }}"
-    homepage: "https://github.com/itsahmadawais/clidesk"
-    description: "Desktop-style file explorer for the terminal"
-    license: "MIT"
+# Scoop support coming soon — create scoop-bucket repo first
+# scoops:
+#   - name: clidesk
+#     repository:
+#       owner: itsahmadawais
+#       name: scoop-bucket
+#       token: "{{ .Env.SCOOP_GITHUB_TOKEN }}"
+#     homepage: "https://github.com/itsahmadawais/clidesk"
+#     description: "Desktop-style file explorer for the terminal"
+#     license: "MIT"
