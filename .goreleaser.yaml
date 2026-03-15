@@ -1,7 +1,3 @@
-# .goreleaser.yaml — optional, more powerful alternative to release.yml
-# Run: goreleaser release --clean
-# Docs: https://goreleaser.com
-
 version: 2
 
 project_name: clidesk
@@ -32,7 +28,7 @@ archives:
     name_template: "clidesk-{{ .Os }}-{{ .Arch }}"
     format_overrides:
       - goos: windows
-        format: zip
+        formats: [zip]
     files:
       - README.md
       - LICENSE
@@ -62,26 +58,26 @@ release:
   prerelease: auto
   name_template: "CLIDesk {{.Tag}}"
 
-# ── Uncomment after creating your Homebrew tap repo ───────────────────────────
-# brews:
-#   - name: clidesk
-#     repository:
-#       owner: itsahmadawais
-#       name: homebrew-tap
-#       token: "{{ .Env.TAP_GITHUB_TOKEN }}"
-#     homepage: "https://github.com/itsahmadawais/clidesk"
-#     description: "Desktop-style file explorer for the terminal"
-#     license: "MIT"
-#     install: |
-#       bin.install "clidesk"
+brews:
+  - name: clidesk
+    repository:
+      owner: itsahmadawais
+      name: homebrew-tap
+      token: "{{ .Env.TAP_GITHUB_TOKEN }}"
+    homepage: "https://github.com/itsahmadawais/clidesk"
+    description: "Desktop-style file explorer for the terminal"
+    license: "MIT"
+    install: |
+      bin.install "clidesk"
+    test: |
+      system "#{bin}/clidesk", "--help"
 
-# ── Uncomment after creating your Scoop bucket repo ──────────────────────────
-# scoops:
-#   - name: clidesk
-#     repository:
-#       owner: itsahmadawais
-#       name: scoop-bucket
-#       token: "{{ .Env.SCOOP_GITHUB_TOKEN }}"
-#     homepage: "https://github.com/itsahmadawais/clidesk"
-#     description: "Desktop-style file explorer for the terminal"
-#     license: "MIT"
+scoops:
+  - name: clidesk
+    repository:
+      owner: itsahmadawais
+      name: scoop-bucket
+      token: "{{ .Env.SCOOP_GITHUB_TOKEN }}"
+    homepage: "https://github.com/itsahmadawais/clidesk"
+    description: "Desktop-style file explorer for the terminal"
+    license: "MIT"
