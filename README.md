@@ -33,13 +33,32 @@ Developers spend most of their time in the terminal, but navigating the filesyst
 
 ## Installation
 
-### Via Homebrew (macOS & Linux)
+### Homebrew (macOS & Linux)
+
+One command — no tap needed:
 
 ```bash
 brew install itsahmadawais/tap/clidesk
 ```
 
-### Via Go
+**Prerequisites:** [Homebrew](https://brew.sh) must be installed. If you don't have it:
+
+```bash
+# macOS / Linux
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+**Update to latest:**
+```bash
+brew upgrade clidesk
+```
+
+**Uninstall:**
+```bash
+brew uninstall clidesk
+```
+
+### Go
 
 ```bash
 go install github.com/itsahmadawais/clidesk@latest
@@ -209,7 +228,8 @@ See [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) for a full technical deep-div
 - [ ] Multi-select with batch operations
 - [ ] Tabs for multiple directories
 - [ ] SSH / remote directory browsing
-- [ ] Homebrew tap and Scoop bucket for one-line install
+- [ ] Homebrew core (official `brew install clidesk`) — requires 75+ downloads/day
+- [ ] Scoop bucket for Windows
 
 ---
 
