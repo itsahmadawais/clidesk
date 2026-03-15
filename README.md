@@ -33,7 +33,13 @@ Developers spend most of their time in the terminal, but navigating the filesyst
 
 ## Installation
 
-### Via Go (recommended)
+### Via Homebrew (macOS & Linux)
+
+```bash
+brew install itsahmadawais/tap/clidesk
+```
+
+### Via Go
 
 ```bash
 go install github.com/itsahmadawais/clidesk@latest
